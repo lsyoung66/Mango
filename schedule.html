@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <title>Document</title>
+
+  <style type='text/css'>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+
+	#calendar {
+		width: 900px;
+		margin: 0 auto;
+		}
+
+</style>
+</head>
+<link rel='stylesheet' type='text/css' href='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.css' />
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery.js'></script>
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/jquery-ui-custom.js'></script>
+<script type='text/javascript' src='http://www.blueb.co.kr/data/201010/IJ12872423858253/fullcalendar.min.js'></script>
+<script type='text/javascript'>
+
+	$(document).ready(function() {
+
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},
+			editable: true,
+			events: [
+				{
+					title: 'BIRTHDAY PARTY',
+					start: new Date(y, m, 1)
+				},
+
+
+
+				{
+					title: 'Hospital',
+					start: new Date(y, m, d, 10, 30),
+					allDay: false
+				},
+
+
+				{
+					title: 'BUSAN TRIP',
+					start: new Date(y, m, 11),
+					end: new Date(y, m, 14),
+					url: 'http://google.com/'
+				}
+			]
+		});
+
+	});
+
+</script>
+<body>
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <span class="avatar"><a href="index.html"><img src="images/mango/1.PNG" alt="" /></a></span><br /><br />
+      <h1>It is <strong>the cutest cat</strong> in the world, <a href="index.html">MANGO</a>.<br /><br /><br />
+      </h1>
+      <div id="menu-wrapper">
+        <div id="menu">
+          <ul>
+            <ul><a href="profile.html">Profile</a>
+            <a href="board.html">Board</a>
+            <a href="photos.html">Photos</a>
+            <a href="notice.html">Notice</a>
+            <a href="news.html">News</a>
+            <a href="schedule.html">Schedule</a>
+          </ul>
+        </div><Br />
+    </header>
+
+        <h2>Schedule</h2><hr/>
+
+        <div id='calendar'></div><br /><br />
+
+        <center>
+        <form name=memoAdd method=post action=memoAdd.jsp>
+         <input type=text2 name=memoYear size=4>년
+         <input type=text2 name=memoMonth size=2>월
+         <input type=text2 name=memoDay size=2>일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         내용 : <input type=text2 name=memoContents>&nbsp;
+         <input type=submit value="추가">
+        </form>
+        </center>
+
+        <footer id="footer">
+          <p>&copy; Untitled. All rights reserved SY. Design:TEMPLATED.</p>
+        </footer>
+
+</body>
+</html>
